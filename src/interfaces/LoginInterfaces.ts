@@ -3,19 +3,15 @@ export interface LoginInterface {
     password: String;
 }
 
-export interface CharacterInterface {
-    char_id: string; 
-    name: string;
-    birthday: string;
-    occupation: [string];
-    img: string;
-    status: string;
-    nickname: string;
-    portrayed: string;
+export interface ContainersInterface {
+    id: String;
+    origin: String;
+    destiny: String;
 }
 
-export interface PhraseInterface {
-    quote_id: string;
-    quote: string;
-    author: string;
+export interface WorkerInterface {
+    id: String;
+    name: String;
+    surname: String;
+    ocuppation: String;
 }
