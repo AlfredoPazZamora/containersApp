@@ -18,7 +18,7 @@ const Component = (props: Props) => {
                 source={require(animationBoat)} 
                 autoPlay 
                 loop={false}
-                speed={0.5}
+                speed={1.5}
                 onAnimationFinish = {() => { navigateToLoginScreen() }}
                 />        
         </View>
