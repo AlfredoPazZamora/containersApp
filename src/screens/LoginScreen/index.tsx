@@ -6,7 +6,6 @@ import {useForm} from '../../hooks/useForm';
 import {LoginInterface} from '../../interfaces/LoginInterfaces';
 import * as Animatable from 'react-native-animatable';
 
-
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface Props extends NativeStackScreenProps<any, any> {}
@@ -39,7 +38,7 @@ const Component = (props: Props) => {
     return (
 
         <View style={styles.Container}>
-            <StatusBar backgroundColor='#000' barStyle="light-content"/>
+            <StatusBar backgroundColor='#0466C8' barStyle="light-content"/>
             <View style={styles.Header}> 
                 <Ionicons 
                     name='boat-outline'
@@ -53,7 +52,7 @@ const Component = (props: Props) => {
                 <View style={styles.Action}>
                     <Ionicons
                         name="person-outline"
-                        color={'#333'}
+                        color={'#001233'}
                         size={30}
                     />
                     <TextInput 
@@ -68,7 +67,7 @@ const Component = (props: Props) => {
                         <Animatable.View animation="bounceIn">
                             <Ionicons 
                                 name='checkmark-circle-outline'
-                                color='green'
+                                color='#38B000'
                                 size={30}
                             /> 
                         </Animatable.View>
@@ -79,7 +78,7 @@ const Component = (props: Props) => {
                 <View style={styles.Action}>
                     <Ionicons
                         name="lock-closed-outline"
-                        color={'#333'}
+                        color={'#001233'}
                         size={30}
                     />
                     <TextInput 
@@ -96,12 +95,12 @@ const Component = (props: Props) => {
                         {showPassword ? 
                             <Ionicons 
                                 name='eye-off'
-                                color='gray'
+                                color='#7D8597'
                                 size={30}
                             /> : 
                             <Ionicons 
                                 name='eye'
-                                color='gray'
+                                color='#7D8597'
                                 size={30}
                             />
 
@@ -126,12 +125,12 @@ const Component = (props: Props) => {
 const styles = StyleSheet.create({
     Container: {
       flex: 1,
-      backgroundColor: "#000"
+      backgroundColor: "#0466C8"
     },
     Header: {
         flex: 1,
         justifyContent: 'center',
-        paddingHorizontal: 20,
+        padding: 20,
         alignSelf: 'center'
     },
     Footer: {
@@ -142,13 +141,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 30
     },
-    Text_header: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 30
-    },
     Text_footer: {
-        color: '#05375a',
+        color: '#001233',
         fontSize: 18
     },
     Action: {
@@ -160,22 +154,11 @@ const styles = StyleSheet.create({
         borderBottomColor: '#f2f2f2',
         paddingBottom: 5,
     },
-    ActionError: {
-        flexDirection: 'row',
-        marginTop: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#FF0000',
-        paddingBottom: 5
-    },
     TextInput: {
         flex: 1,
         paddingLeft: 10,
-        color: '#05375a',
+        color: '#001233',
         fontSize: 16
-    },
-    ErrorMsg: {
-        color: '#FF0000',
-        fontSize: 14,
     },
     Button: {
         alignItems: 'center',
@@ -187,7 +170,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
-        backgroundColor: '#000'
+        backgroundColor: '#0466C8'
     },
     TextSign: {
         fontSize: 18,
