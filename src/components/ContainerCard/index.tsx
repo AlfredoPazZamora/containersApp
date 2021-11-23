@@ -2,7 +2,6 @@ import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import { ContainersInterface } from '../../interfaces/LoginInterfaces';
 
-
 interface Props {
     container: ContainersInterface;
 }
@@ -14,7 +13,6 @@ const Component = (props: Props) => {
         <TouchableHighlight style={styles.Container}>
             <>
                 <View style={styles.ImageContainer}>
-                    
                 </View>
                 <View style={styles.DataContainer}>
                     <View style={styles.Information}>
