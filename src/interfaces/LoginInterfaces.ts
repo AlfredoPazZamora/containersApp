@@ -1,5 +1,5 @@
 export interface LoginInterface {
-    email: String;
+    username: String;
     password: String;
 }
 
