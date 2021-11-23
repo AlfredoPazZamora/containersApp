@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ScrollView, Text, View } from 'react-native';
 import containersApi from '../../api/containersApi';
 import ContainerCard from '../../components/ContainerCard';
-import { ContainersInterface } from '../../interfaces/LoginInterfaces';
+import { ContainersInterface } from '../../interfaces/interfaces';
 
 const Component = () => {
     const [containers, setContainers] = useState<[ContainersInterface] | null>(null,);

@@ -4,7 +4,7 @@ import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navig
 import SplashScreen from '../../screens/SplashScreen';
 import HomeScreen from '../../screens/HomeScreen';
 import LoginScreen from '../../screens/LoginScreen';
-import { LoginInterface } from '../../interfaces/LoginInterfaces';
+import { LoginInterface } from '../../interfaces/interfaces';
 
 const Stack = createNativeStackNavigator();
 

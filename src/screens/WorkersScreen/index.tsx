@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native';
 import containersApi from '../../api/containersApi';
 import { WokerkerCard } from '../../components/WorkersCard';
-import { WorkerInterface } from '../../interfaces/LoginInterfaces';
+import { WorkerInterface } from '../../interfaces/interfaces';
 
 const Component = () => {
     const [workers, setWorker] = useState<[WorkerInterface] | null>(null,);

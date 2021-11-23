@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import { ContainersInterface } from '../../interfaces/LoginInterfaces';
+import { ContainersInterface } from '../../interfaces/interfaces';
 
 
 interface Props {

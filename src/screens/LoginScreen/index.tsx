@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View, ToastAn
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import {useForm} from '../../hooks/useForm';
-import {LoginInterface} from '../../interfaces/LoginInterfaces';
+import {LoginInterface} from '../../interfaces/interfaces';
 import * as Animatable from 'react-native-animatable';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
