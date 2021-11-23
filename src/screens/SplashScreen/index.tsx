@@ -1,37 +1,35 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React, { useEffect } from 'react'
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, View } from 'react-native';
+import LottieView from 'lottie-react-native';
 
-const image = require('../../assets/images/port.jpg');
+const animationBoat = '../../assets/animation/splashAnimation.json';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
 const Component = (props: Props) => {
-    const {navigation} = props;
-    useEffect(() => {
-        setTimeout(
-            () => {
-                navigation.navigate("Login")
-            }, 3000)
-    }, []);
 
+    const {navigation} = props;
+    const navigateToLoginScreen = () => { navigation.navigate('Login') };
 
     return (
         <View style={styles.Container}>
-            <ImageBackground
-                source={image} resizeMode='cover'
-                style={styles.Image}
-            />
+            <LottieView 
+                source={require(animationBoat)} 
+                autoPlay 
+                loop={false}
+                speed={1.5}
+                onAnimationFinish = {() => { navigateToLoginScreen() }}
+                />        
         </View>
+        
     )
 }
 
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
-    },
-    Image: {
-        flex: 1,
+        backgroundColor: '#fff'
     },
 })
 
