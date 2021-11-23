@@ -9,12 +9,15 @@ interface Props {
 
 const Component = (props: Props) => {
     const { container } = props;
-    const { id, origin, destiny } = container;
+    const { id, origin, destiny, img } = container;
     return (
         <TouchableHighlight style={styles.Container}>
             <>
                 <View style={styles.ImageContainer}>
-                    
+                    <Image
+                        style={styles.Image}
+                        source={{uri: img}}
+                    />
                 </View>
                 <View style={styles.DataContainer}>
                     <View style={styles.Information}>
