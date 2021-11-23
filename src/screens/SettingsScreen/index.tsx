@@ -1,128 +1,65 @@
 import { logicalExpression } from '@babel/types';
 import React from 'react'
-import { ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Component = () => {
-    return (
-        <ScrollView >
-            <StatusBar backgroundColor='#fff' barStyle="light-content"/>
-            <View style={styles.TitleContainer}>
-                <Text style={styles.TitleText}>Settings</Text>
-            </View>
 
-            <View style={styles.InfoContainer}>
-                <Ionicons 
-                    style={styles.UserIcon}
-                    name='person-circle-outline'
-                    color='#001233'
-                    size={70}
-                />
-                <View style={styles.TextInfoContainer}>
-                    <Text style={styles.TextInfo_Username}>Hello Username</Text>
+    const iconsData = [
+        {iconName: 'link-outline', color: '#0466C8', title: 'Connections'},
+        {iconName: 'image-outline', color: '#008000', title: 'Display'},
+        {iconName: 'notifications-outline', color: '#FFB703', title: 'Notifications'},
+        {iconName: 'cog-outline', color: '#0466C8', title: 'System'},
+        {iconName: 'alert-circle-outline', color: '#5C677D', title: 'About application'},
+    ];
+
+    return (
+        <SafeAreaView style={styles.Container}>
+            <StatusBar backgroundColor='#fff' barStyle="light-content"/>
+            <View style={styles.HeaderContainer}>
+                <Text style={styles.TitleText}>Settings</Text>
+                <View style={styles.InfoContainer}>
+                    <Ionicons 
+                        style={styles.UserIcon}
+                        name='person-circle-outline'
+                        color='#001233'
+                        size={70}
+                    />
+                    <View style={styles.TextInfoContainer}>
+                        <Text style={styles.TextInfo_Username}>Hello Username</Text>
+                    </View>
                 </View>
             </View>
 
+
             <View style={styles.SettingsContainer}> 
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='wifi-outline'
-                            color='#0466C8'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>WiFi</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='bluetooth-outline'
-                            color='#0466C8'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>Bluetooth</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='image-outline'
-                            color='#008000'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>Display</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='volume-high-outline'
-                            color='#FFB703'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>Sounds</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='cog-outline'
-                            color='#0466C8'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>System</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.SettingsItem_Container}>  
-                    <View style={styles.SettingsItem_Left}>
-                        <Ionicons 
-                            name='cog-outline'
-                            color='#FFB703'
-                            size={30}
-                        />
-                        <Text style={styles.SettingsItem_Text}>System</Text>
-                    </View>
-                    <Ionicons 
-                        name='chevron-forward-outline'
-                        color='#7D8597'
-                        size={30}
-                    />
-                </TouchableOpacity>
+                <FlatList 
+                    data={iconsData}
+                    renderItem={({item}) => {
+                        return (
+                            <TouchableOpacity style={styles.SettingsItem_Container}>  
+                                <View style={styles.SettingsItem_Left}>
+                                    <Ionicons 
+                                        name={item.iconName}
+                                        color={item.color}
+                                        size={30}
+                                    />
+                                    <Text style={styles.SettingsItem_Text}>{item.title}</Text>
+                                </View>
+                                <Ionicons 
+                                    name='chevron-forward-outline'
+                                    color='#7D8597'
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        );
+                    }}
+                />
             </View>
-        </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -131,12 +68,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff"
     },
-    TitleContainer: {
+    HeaderContainer: {
         display: 'flex',
         width: '100%',
-        height: '20%',
         justifyContent: 'center',
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
     },
     TitleText: {
         fontSize: 40,
@@ -150,17 +86,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignContent: 'center',
         width: '100%',
-        height: '15%',
-        paddingHorizontal: 20,
-        borderColor: '#7D8597'
+        marginVertical: 20
     },
     UserIcon: {
         paddingRight: 10,
     },
     TextInfoContainer: {
         display: 'flex',
-        height: '100%',
-        width: '80%',
         justifyContent: 'center',
     },
     TextInfo_Username: {
@@ -179,7 +111,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         borderColor: '#7D8597',
-        borderBottomWidth: 0.9,
+        borderTopWidth: 0.9,
     },
     SettingsItem_Left: {
         display: 'flex',

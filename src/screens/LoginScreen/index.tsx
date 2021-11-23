@@ -60,6 +60,7 @@ const Component = (props: Props) => {
                         onChangeText={value => onChange('username', value)}
                         maxLength={20}
                         placeholder='Your Username'
+                        placeholderTextColor='#979DAC'
                         style={styles.TextInput}
                         autoCapitalize='none'
                     />
@@ -85,6 +86,7 @@ const Component = (props: Props) => {
                         value={password as string}
                         onChangeText={value => onChange('password', value)}
                         placeholder='Your Password'
+                        placeholderTextColor='#979DAC'
                         style={styles.TextInput}
                         autoCapitalize='none'
                         secureTextEntry={showPassword}
