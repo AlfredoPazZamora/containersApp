@@ -1,8 +1,8 @@
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 // Screens
 import ContainersScreen from '../../screens/ContainersScreen';
@@ -17,38 +17,53 @@ const settingsName = 'Settings';
 const Component = () => {
     return (
         <Tab.Navigator
-            
-            initialRouteName={containersName}
-            screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
-                  let iconName;
-                  let rn = route.name;
-      
-                  if (rn === containersName) {
-                    iconName = focused ? 'home' : 'home-outline';
-      
-                  } else if (rn === workersName) {
-                    iconName = focused ? 'list' : 'list-outline';
-      
-                  } else if (rn === settingsName) {
-                    iconName = focused ? 'settings' : 'settings-outline';
-                  }
-      
-                  // You can return any component that you like here!
-                  return <Ionicons name={iconName as string} size={size} color={color} />;
-                },
-                headerShown: false,
-                tabBarActiveTintColor: '#0466C8',
-                tabBarInactiveTintColor: '#979DAC',
-                tabBarLabelStyle: {paddingBottom: 10, fontSize: 10},
-                tabBarStyle: {padding: 10, height: 70}
-              })}
-              
-            >
-
-            <Tab.Screen name={containersName} component={ContainersScreen} />   
-            <Tab.Screen name={workersName} component={WorkersScreen} />   
-            <Tab.Screen name={settingsName} component={SettingsScreen} />   
+            activeColor="#fff"
+            inactiveColor="#001233"
+            barStyle={{ backgroundColor: 'tomato', borderTopStartRadius: 10}}
+            shifting={true}
+        >
+            <Tab.Screen
+                name={containersName}
+                component={ContainersScreen}
+                options={{
+                    tabBarLabel: 'Containers',
+                    tabBarColor: '#0466C8',
+                    tabBarIcon: ({focused, color }) => (
+                        !focused ?
+                            <Ionicons name='cube-outline' size={26} color={color}/>
+                            :
+                            <Ionicons name='cube' size={26} color={color}/>
+                    ),
+                  }}
+            />
+            <Tab.Screen
+                name={workersName}
+                component={WorkersScreen}
+                options={{
+                    tabBarLabel: 'Workers',
+                    tabBarColor: '#FB8500',
+                    tabBarIcon: ({focused, color }) => (
+                        !focused ? 
+                            <Ionicons name='person-outline' size={26} color={color}/>
+                            :
+                            <Ionicons name='person' size={26} color={color}/>
+                    ),
+                  }}
+            />
+            <Tab.Screen
+                name={settingsName}
+                component={SettingsScreen}
+                options={{
+                    tabBarLabel: 'Settings',
+                    tabBarColor: '#33415C',
+                    tabBarIcon: ({focused, color }) => (
+                        !focused ? 
+                            <Ionicons name='cog-outline' size={26} color={color}/>
+                            :
+                            <Ionicons name='cog' size={26} color={color}/>
+                    ),
+                  }}
+            />
         </Tab.Navigator>
     )
 }
