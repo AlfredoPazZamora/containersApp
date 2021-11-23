@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
-import { StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 const animationBoat = '../../assets/animation/splashAnimation.json';
@@ -14,6 +14,8 @@ const Component = (props: Props) => {
 
     return (
         <View style={styles.Container}>
+            <StatusBar backgroundColor='#fff' barStyle="light-content"/>
+
             <LottieView 
                 source={require(animationBoat)} 
                 autoPlay 

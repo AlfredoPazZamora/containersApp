@@ -25,10 +25,10 @@ const Component = (props: Props) => {
             ToastAndroid.show("Username or password field cannot be empty.", ToastAndroid.SHORT );
             return;
         }else if(username.length < 4){
-            ToastAndroid.show("Username is not valid", ToastAndroid.SHORT );
+            ToastAndroid.show("Username must have a minimum of 4 characters", ToastAndroid.SHORT );
             return;
-        }else if(password.length < 6){
-            ToastAndroid.show("Password is not valid", ToastAndroid.SHORT );
+        }else if(password.length < 4){
+            ToastAndroid.show("Password must have a minimum of 4 characters", ToastAndroid.SHORT );
             return;
         }else{
             navigation.navigate('Home');
@@ -60,10 +60,11 @@ const Component = (props: Props) => {
                         onChangeText={value => onChange('username', value)}
                         maxLength={20}
                         placeholder='Your Username'
+                        placeholderTextColor='#979DAC'
                         style={styles.TextInput}
                         autoCapitalize='none'
                     />
-                    {username.length > 4 ?
+                    {username.length >= 4 ?
                         <Animatable.View animation="bounceIn">
                             <Ionicons 
                                 name='checkmark-circle-outline'
@@ -85,6 +86,7 @@ const Component = (props: Props) => {
                         value={password as string}
                         onChangeText={value => onChange('password', value)}
                         placeholder='Your Password'
+                        placeholderTextColor='#979DAC'
                         style={styles.TextInput}
                         autoCapitalize='none'
                         secureTextEntry={showPassword}
