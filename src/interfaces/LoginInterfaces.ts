@@ -7,6 +7,7 @@ export interface ContainersInterface {
     id: String;
     origin: String;
     destiny: String;
+    img: string;
 }
 
 export interface WorkerInterface {
@@ -14,4 +15,5 @@ export interface WorkerInterface {
     name: String;
     surname: String;
     ocuppation: String;
+    img: string;
 }
