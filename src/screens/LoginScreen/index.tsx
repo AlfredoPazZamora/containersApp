@@ -31,7 +31,8 @@ const Component = (props: Props) => {
             ToastAndroid.show("Password must have a minimum of 4 characters", ToastAndroid.SHORT );
             return;
         }else{
-            navigation.navigate('Home');
+            ToastAndroid.show(`Welcome ${username}`, ToastAndroid.SHORT );
+            navigation.navigate('Home', {username, password});
         }
     }
 

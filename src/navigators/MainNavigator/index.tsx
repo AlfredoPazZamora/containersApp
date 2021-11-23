@@ -1,12 +1,18 @@
 import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import SplashScreen from '../../screens/SplashScreen';
 import HomeScreen from '../../screens/HomeScreen';
 import LoginScreen from '../../screens/LoginScreen';
-
+import { LoginInterface } from '../../interfaces/LoginInterfaces';
 
 const Stack = createNativeStackNavigator();
+
+export type params = {
+    Splash: undefined,
+    Login: undefined,
+    Home: LoginInterface,
+}
 
 export const Component = () => {
     return (

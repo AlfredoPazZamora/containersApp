@@ -1,13 +1,15 @@
 import { logicalExpression } from '@babel/types';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
 import { FlatList, ScrollView, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { params } from '../../navigators/MainNavigator';
+
 
 const Component = () => {
-
     const iconsData = [
         {iconName: 'link-outline', color: '#0466C8', title: 'Connections'},
         {iconName: 'image-outline', color: '#008000', title: 'Display'},
@@ -26,11 +28,8 @@ const Component = () => {
                         style={styles.UserIcon}
                         name='person-circle-outline'
                         color='#001233'
-                        size={70}
+                        size={75}
                     />
-                    <View style={styles.TextInfoContainer}>
-                        <Text style={styles.TextInfo_Username}>Hello Username</Text>
-                    </View>
                 </View>
             </View>
 
@@ -82,7 +81,6 @@ const styles = StyleSheet.create({
     }, 
     InfoContainer: {
         display: 'flex',
-        flexDirection: 'row',
         alignItems: 'center',
         alignContent: 'center',
         width: '100%',
