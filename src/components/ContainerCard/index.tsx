@@ -6,14 +6,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface Props {
     container: ContainersInterface;
+    onClick: (container: ContainersInterface) => void;
 }
 
 const Component = (props: Props) => {
-    const { container } = props;
+    const { container, onClick} = props;
     const { id, origin, destiny, img, temp, tacking_number } = container;
 
     return (
-        <TouchableHighlight style={styles.Container}>
+        <TouchableHighlight style={styles.Container} onPress={() => onClick(container)}>
             <>
                 <View style={styles.LineTop}></View>
                 <View style={styles.ImageContainer}>
