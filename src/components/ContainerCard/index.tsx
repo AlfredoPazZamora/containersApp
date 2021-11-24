@@ -38,14 +38,14 @@ const Component = (props: Props) => {
                             <Ionicons 
                                 name='arrow-forward-outline'
                                 color='#000'
-                                size={30}
+                                size={25}
                             />
 
                             <View style={styles.IconText}>
                                 <Ionicons 
                                     name='navigate'
                                     color='#008000'
-                                    size={30}
+                                    size={25}
                                 />
                                 <Text style={styles.NickName}>{destiny}</Text>
                             </View>
@@ -56,7 +56,7 @@ const Component = (props: Props) => {
                                 <Ionicons 
                                     name='thermometer-outline'
                                     color='#0466C8'
-                                    size={30}
+                                    size={25}
                                 />
                                 <Text style={styles.NickName}>{temp}</Text>
                             </View>
@@ -129,10 +129,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         letterSpacing: 2,
-        fontSize: 24,
+        fontSize: 18,
         position: 'absolute',
-        left: 100,
-        top: 10,
+        left: 85,
+        top: 15,
     },
     IconText: {
         display: 'flex',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     NickName: {
         color: '#000',
         marginLeft: 10,
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
     },
 });
