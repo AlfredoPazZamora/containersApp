@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView, StatusBar } from 'react-native';
 import containersApi from '../../api/containersApi';
 import ContainerCard from '../../components/ContainerCard';
 import { ContainersInterface } from '../../interfaces/interfaces';

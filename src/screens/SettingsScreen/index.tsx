@@ -1,13 +1,8 @@
-import { logicalExpression } from '@babel/types';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
-import { FlatList, ScrollView, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { TextInput } from 'react-native-paper';
+import { FlatList,StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { params } from '../../navigators/MainNavigator';
-
 
 const Component = () => {
     const iconsData = [
@@ -20,14 +15,14 @@ const Component = () => {
 
     return (
         <SafeAreaView style={styles.Container}>
-            <StatusBar backgroundColor='#fff' barStyle="light-content"/>
+            <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
             <View style={styles.HeaderContainer}>
                 <Text style={styles.TitleText}>Settings</Text>
                 <View style={styles.InfoContainer}>
                     <Ionicons 
                         style={styles.UserIcon}
                         name='person-circle-outline'
-                        color='#001233'
+                        color='#33415C'
                         size={75}
                     />
                 </View>
@@ -65,7 +60,7 @@ const Component = () => {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
-        backgroundColor: "#fff"
+        backgroundColor: "#f2f2f2"
     },
     HeaderContainer: {
         display: 'flex',
@@ -75,7 +70,7 @@ const styles = StyleSheet.create({
     },
     TitleText: {
         fontSize: 40,
-        color: '#001233',
+        color: '#33415C',
         fontWeight: 'bold',
         letterSpacing: 2
     }, 
@@ -99,7 +94,7 @@ const styles = StyleSheet.create({
         color: '#001233'
     },
     SettingsContainer: {
-        borderTopColor: '#7D8597',
+        borderTopColor: '#33415C',
         borderTopWidth: 20
     },
     SettingsItem_Container: {

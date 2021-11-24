@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { WorkerInterface } from '../../interfaces/interfaces';
-
 
 interface Props {
     worker: WorkerInterface;
