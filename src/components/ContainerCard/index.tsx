@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import { ContainersInterface } from '../../interfaces/interfaces';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 interface Props {
@@ -9,21 +10,57 @@ interface Props {
 
 const Component = (props: Props) => {
     const { container } = props;
-    const { id, origin, destiny, img } = container;
+    const { id, origin, destiny, img, temp, tacking_number } = container;
+
     return (
         <TouchableHighlight style={styles.Container}>
             <>
+                <View style={styles.LineTop}></View>
                 <View style={styles.ImageContainer}>
                     <Image
                         style={styles.Image}
                         source={{uri: img}}
                     />
+                    <Text style={styles.TackingNumber}>Container: {tacking_number}</Text>
                 </View>
                 <View style={styles.DataContainer}>
                     <View style={styles.Information}>
-                        <Text style={styles.Name}>{id}</Text>
-                        <Text style={styles.NickName}>{origin}</Text>
-                        <Text style={styles.NickName}>{destiny}</Text>
+                        <View style={styles.MoreInfo}>
+                            <View style={styles.IconText}>
+                                <Ionicons 
+                                    name='navigate'
+                                    color='#d90429'
+                                    size={30}
+                                />
+                                <Text style={styles.NickName}>{origin}</Text>
+                            </View>
+
+                            <Ionicons 
+                                name='arrow-forward-outline'
+                                color='#000'
+                                size={30}
+                            />
+
+                            <View style={styles.IconText}>
+                                <Ionicons 
+                                    name='navigate'
+                                    color='#008000'
+                                    size={30}
+                                />
+                                <Text style={styles.NickName}>{destiny}</Text>
+                            </View>
+                        </View>
+
+                        <View style={styles.MoreInfo}>
+                            <View style={styles.IconText}>
+                                <Ionicons 
+                                    name='thermometer-outline'
+                                    color='#0466C8'
+                                    size={30}
+                                />
+                                <Text style={styles.NickName}>{temp}</Text>
+                            </View>
+                        </View>
                     </View>
                 </View>
             </>
@@ -33,45 +70,86 @@ const Component = (props: Props) => {
 
 const styles = StyleSheet.create({
     Container: {
-        backgroundColor: '#ddd',
+        marginHorizontal: 20,
+        marginTop: 20,
+        height: 275,
+        borderRadius: 10,
+        backgroundColor: '#f8f9fa',
         display: 'flex',
-        flexDirection: 'row',
-        borderColor: '#rrr',
-        borderWidth: 0.5,
-        height: 100,
-        padding: 20,
-        with: '100%',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 9,
+        },
+        shadowOpacity: 0.50,
+        shadowRadius: 12.35,
+
+        elevation: 19,
+    },
+    LineTop: {
+        backgroundColor: '#0466C8',
+        height: '30%',
+        width: '100%',
+        borderTopStartRadius: 10,
+        borderTopEndRadius: 10,
     },
     ImageContainer: {
-        alignItems: 'center',
         display: 'flex',
-        flex: 0.2,
-        height: '100%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        height: '30%',
+        position: 'absolute',
+        left: 20,
+        top: 40,
+        width: '90%',
     },
     Image: {
         borderRadius: 100,
-        height: '100%',
+        height: 80,
         justifyContent: 'center',
-        width: 60,
+        width: 80,
     },
     DataContainer: {
         display: 'flex',
+        alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        flex: 0.7,
-        padding: 1,
+        height: '70%',
+        padding: 20,
+        borderBottomStartRadius: 10,
+        borderBottomEndRadius: 10
     },
     Information: {
-        justifyContent: 'center',
+        display: 'flex',
+        justifyContent: 'space-between',
+        height: '70%',
+        width: '100%',
+        marginTop: 20
     },
-    Name: {
-        color: '#101419',
+    TackingNumber: {
+        color: '#fff',
         fontWeight: 'bold',
         letterSpacing: 2,
+        fontSize: 24,
+        position: 'absolute',
+        left: 100,
+        top: 10,
+    },
+    IconText: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    MoreInfo: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around'
     },
     NickName: {
-        color: '#464655'
+        color: '#000',
+        marginLeft: 10,
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });
 
