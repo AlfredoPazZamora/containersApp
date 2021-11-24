@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ScrollView } from 'react-native';
+import { ScrollView, StatusBar } from 'react-native';
 import containersApi from '../../api/containersApi';
 import { WokerkerCard } from '../../components/WorkersCard';
 import { WorkerInterface } from '../../interfaces/interfaces';
@@ -21,7 +21,14 @@ const Component = () => {
         return <WokerkerCard key={`worker-${index}`} worker={worker} />
     });
 
-    return <ScrollView>{renderWorker}</ScrollView>
+    return (
+        //Container
+        <ScrollView style={{backgroundColor: '#f2f2f2'}}> 
+            <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
+            {renderWorker}
+        </ScrollView>
+        
+    )
 }
 
 export default Component;
