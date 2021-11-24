@@ -4,6 +4,7 @@ import containersApi from '../../api/containersApi';
 import ContainerCard from '../../components/ContainerCard';
 import { ContainersInterface } from '../../interfaces/interfaces';
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { colors } from '../../theme/Colors';
 
 interface Props extends NativeStackScreenProps<any, any>{}
 
@@ -31,8 +32,8 @@ const Component = (props: Props) => {
 
     return (
         //Container
-        <ScrollView style={{backgroundColor: '#f2f2f2'}}> 
-            <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
+        <ScrollView style={{backgroundColor: colors.gray_f2f}}> 
+            <StatusBar backgroundColor={colors.gray_f2f} barStyle="dark-content"/>
             {renderContainer}
         </ScrollView>
         

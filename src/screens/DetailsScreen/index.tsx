@@ -3,6 +3,7 @@ import React from 'react'
 import { FlatList, Image, StatusBar, StyleSheet, Text, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { params } from '../../navigators/MainNavigator'
+import { colors } from '../../theme/Colors'
 
 interface Props extends NativeStackScreenProps<params, 'Details'>{}
 const Component = (props: Props) => {
@@ -18,7 +19,7 @@ const Component = (props: Props) => {
 
         <View style={styles.Shadow}>
             <View style={styles.Container}>
-                <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
+                <StatusBar backgroundColor={colors.gray_f2f} barStyle="dark-content"/>
                 <View style={styles.Box}>
                     <Text style={styles.Title}>N° {tacking_number}</Text>
                 </View>
@@ -26,7 +27,7 @@ const Component = (props: Props) => {
                 <View style={[styles.Box, styles.Temp_Container]}>
                     <Ionicons 
                         name='thermometer-outline'
-                        color='#0466C8'
+                        color={colors.primary}
                         size={30}
                     />
                     <Text style={styles.Temp_Text}>{temp}</Text>
@@ -36,7 +37,7 @@ const Component = (props: Props) => {
                     <View style={styles.RouteItem_Container}>
                         <Ionicons 
                             name='navigate'
-                            color='#d90429'
+                            color={colors.red}
                             size={25}
                         />
                         <Text style={styles.RouteItem_Text}>{origin}</Text>
@@ -44,14 +45,14 @@ const Component = (props: Props) => {
 
                     <Ionicons 
                         name='arrow-forward-outline'
-                        color='#000'
+                        color={colors.black}
                         size={30}
                     />
 
                     <View style={styles.RouteItem_Container}>
                         <Ionicons 
                             name='navigate'
-                            color='#008000'
+                            color={colors.green}
                             size={25}
                         />
                         <Text style={styles.RouteItem_Text}>{destiny}</Text>
@@ -72,13 +73,13 @@ const styles = StyleSheet.create({
         height: '100%',
         display: 'flex',
         justifyContent: 'center',
-        backgroundColor: '#f2f2f2'
+        backgroundColor: colors.gray_f2f
     },
     Container: {
         margin: 20,
         height: '90%',
         borderRadius: 10,
-        backgroundColor: '#f8f9fa',
+        backgroundColor: colors.white,
         display: 'flex',
         justifyContent: 'center',
 
@@ -98,10 +99,9 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingVertical: 20,
         display: 'flex',
-        // backgroundColor: '#333',
     },
     Title: {
-        color: '#000',
+        color: colors.black,
         fontWeight: 'bold',
         fontSize: 32,
         alignSelf: 'center'
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     Temp_Text: {
-        color: '#000',
+        color: colors.black,
         fontWeight: 'bold',
         fontSize: 24,
         marginHorizontal: 10
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
     },
     RouteItem_Text: {
-        color: '#000',
+        color: colors.black,
         fontSize: 20,
         fontWeight: '400'
     },

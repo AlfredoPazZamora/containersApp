@@ -7,6 +7,7 @@ import {LoginInterface} from '../../interfaces/interfaces';
 import * as Animatable from 'react-native-animatable';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colors } from '../../theme/Colors';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
@@ -39,11 +40,11 @@ const Component = (props: Props) => {
     return (
 
         <View style={styles.Container}>
-            <StatusBar backgroundColor='#0466C8' barStyle="light-content"/>
+            <StatusBar backgroundColor={colors.primary} barStyle="light-content"/>
             <View style={styles.Header}> 
                 <Ionicons 
                     name='boat-outline'
-                    color='#fff'
+                    color={colors.white}
                     size={100}
                 />
             </View>
@@ -53,7 +54,7 @@ const Component = (props: Props) => {
                 <View style={styles.Action}>
                     <Ionicons
                         name="person-outline"
-                        color={'#001233'}
+                        color={colors.blue_001}
                         size={30}
                     />
                     <TextInput 
@@ -61,7 +62,7 @@ const Component = (props: Props) => {
                         onChangeText={value => onChange('username', value)}
                         maxLength={20}
                         placeholder='Your Username'
-                        placeholderTextColor='#979DAC'
+                        placeholderTextColor={colors.gray_979}
                         style={styles.TextInput}
                         autoCapitalize='none'
                     />
@@ -69,7 +70,7 @@ const Component = (props: Props) => {
                         <Animatable.View animation="bounceIn">
                             <Ionicons 
                                 name='checkmark-circle-outline'
-                                color='#38B000'
+                                color={colors.green}
                                 size={30}
                             /> 
                         </Animatable.View>
@@ -80,14 +81,14 @@ const Component = (props: Props) => {
                 <View style={styles.Action}>
                     <Ionicons
                         name="lock-closed-outline"
-                        color={'#001233'}
+                        color={colors.blue_001}
                         size={30}
                     />
                     <TextInput 
                         value={password as string}
                         onChangeText={value => onChange('password', value)}
                         placeholder='Your Password'
-                        placeholderTextColor='#979DAC'
+                        placeholderTextColor={colors.gray_979}
                         style={styles.TextInput}
                         autoCapitalize='none'
                         secureTextEntry={showPassword}
@@ -98,12 +99,12 @@ const Component = (props: Props) => {
                         {showPassword ? 
                             <Ionicons 
                                 name='eye-off'
-                                color='#7D8597'
+                                color={colors.gray_979}
                                 size={30}
                             /> : 
                             <Ionicons 
                                 name='eye'
-                                color='#7D8597'
+                                color={colors.gray_979}
                                 size={30}
                             />
 
@@ -128,7 +129,7 @@ const Component = (props: Props) => {
 const styles = StyleSheet.create({
     Container: {
       flex: 1,
-      backgroundColor: "#0466C8"
+      backgroundColor: colors.primary
     },
     Header: {
         flex: 1,
@@ -138,14 +139,14 @@ const styles = StyleSheet.create({
     },
     Footer: {
         flex: 3,
-        backgroundColor: '#fff',
+        backgroundColor: colors.white,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         paddingHorizontal: 20,
         paddingVertical: 30
     },
     Text_footer: {
-        color: '#001233',
+        color: colors.blue_001,
         fontSize: 18
     },
     Action: {
@@ -154,13 +155,13 @@ const styles = StyleSheet.create({
         alignItems:'center',
         marginTop: 10,
         borderBottomWidth: 1,
-        borderBottomColor: '#f2f2f2',
+        borderBottomColor: colors.gray_f2f,
         paddingBottom: 5,
     },
     TextInput: {
         flex: 1,
         paddingLeft: 10,
-        color: '#001233',
+        color: colors.blue_001,
         fontSize: 16
     },
     Button: {
@@ -173,12 +174,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
-        backgroundColor: '#0466C8'
+        backgroundColor: colors.primary
     },
     TextSign: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#fff'
+        color: colors.white
     }
   });
 
