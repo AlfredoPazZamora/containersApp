@@ -3,26 +3,27 @@ import { FlatList,StatusBar, StyleSheet, Text, TouchableOpacity, View } from 're
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colors } from '../../theme/Colors';
 
 const Component = () => {
     const iconsData = [
-        {iconName: 'link-outline', color: '#0466C8', title: 'Connections'},
-        {iconName: 'image-outline', color: '#008000', title: 'Display'},
-        {iconName: 'notifications-outline', color: '#FFB703', title: 'Notifications'},
-        {iconName: 'cog-outline', color: '#0466C8', title: 'System'},
-        {iconName: 'alert-circle-outline', color: '#5C677D', title: 'About application'},
+        {iconName: 'link-outline', color: colors.primary, title: 'Connections'},
+        {iconName: 'image-outline', color: colors.green, title: 'Display'},
+        {iconName: 'notifications-outline', color: colors.secondary, title: 'Notifications'},
+        {iconName: 'cog-outline', color: colors.primary, title: 'System'},
+        {iconName: 'alert-circle-outline', color: colors.gray_334 , title: 'About application'},
     ];
 
     return (
         <SafeAreaView style={styles.Container}>
-            <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
+            <StatusBar backgroundColor={colors.gray_f2f} barStyle="dark-content"/>
             <View style={styles.HeaderContainer}>
                 <Text style={styles.TitleText}>Settings</Text>
                 <View style={styles.InfoContainer}>
                     <Ionicons 
                         style={styles.UserIcon}
                         name='person-circle-outline'
-                        color='#33415C'
+                        color={colors.gray_334}
                         size={75}
                     />
                 </View>
@@ -45,7 +46,7 @@ const Component = () => {
                                 </View>
                                 <Ionicons 
                                     name='chevron-forward-outline'
-                                    color='#7D8597'
+                                    color={colors.gray_979}
                                     size={30}
                                 />
                             </TouchableOpacity>
@@ -60,7 +61,7 @@ const Component = () => {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
-        backgroundColor: "#f2f2f2"
+        backgroundColor: colors.gray_f2f
     },
     HeaderContainer: {
         display: 'flex',
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     },
     TitleText: {
         fontSize: 40,
-        color: '#33415C',
+        color: colors.gray_334,
         fontWeight: 'bold',
         letterSpacing: 2
     }, 
@@ -91,10 +92,10 @@ const styles = StyleSheet.create({
     TextInfo_Username: {
         fontWeight: 'bold',
         fontSize: 24,
-        color: '#001233'
+        color: colors.blue_001
     },
     SettingsContainer: {
-        borderTopColor: '#33415C',
+        borderTopColor: colors.gray_334,
         borderTopWidth: 20
     },
     SettingsItem_Container: {
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
-        borderColor: '#7D8597',
+        borderColor: colors.gray_979,
         borderTopWidth: 0.9,
     },
     SettingsItem_Left: {
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     SettingsItem_Text: {
         marginLeft: 10,
         fontSize: 20,
-        color: '#001233',
+        color: colors.blue_001,
         fontWeight: '300',
         letterSpacing: 2
     },

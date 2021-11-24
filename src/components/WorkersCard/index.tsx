@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { WorkerInterface } from '../../interfaces/interfaces';
+import { colors } from '../../theme/Colors';
 
 interface Props {
     worker: WorkerInterface;
@@ -54,7 +55,7 @@ const Component = (props: Props) => {
                     <Ionicons
                         style={styles.Icon}
                         name={iconName}
-                        color='#FB8500'
+                        color={colors.secondary}
                         size={30}
                     />
                 </View>
@@ -69,13 +70,13 @@ const styles = StyleSheet.create({
         marginTop: 20,
 
         height: 150,
-        backgroundColor: '#f8f9fa',
+        backgroundColor: colors.white,
 
         display: 'flex',
         flexDirection: 'row',
         
         borderRadius: 10,
-        shadowColor: "#000",
+        shadowColor: colors.black,
         shadowOffset: {
             width: 0,
             height: 9,
@@ -116,13 +117,13 @@ const styles = StyleSheet.create({
         height: '80%',
     },
     Name: {
-        color: '#101419',
+        color: colors.black,
         fontWeight: 'bold',
         letterSpacing: 2,
         fontSize: 20
     },
     NickName: {
-        color: '#fff',
+        color: colors.white,
         fontSize: 16,
         fontWeight: '300',
     },
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#FB8500',
+        backgroundColor: colors.secondary,
         borderRadius: 10,
         marginTop: 10,
         padding: 5,

@@ -2,6 +2,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
+import { colors } from '../../theme/Colors';
 
 const animationBoat = '../../assets/animation/splashAnimation.json';
 
@@ -14,7 +15,7 @@ const Component = (props: Props) => {
 
     return (
         <View style={styles.Container}>
-            <StatusBar backgroundColor='#fff' barStyle="light-content"/>
+            <StatusBar backgroundColor={colors.white} barStyle="light-content"/>
 
             <LottieView 
                 source={require(animationBoat)} 

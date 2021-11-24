@@ -3,6 +3,7 @@ import { ScrollView, StatusBar } from 'react-native';
 import containersApi from '../../api/containersApi';
 import { WokerkerCard } from '../../components/WorkersCard';
 import { WorkerInterface } from '../../interfaces/interfaces';
+import { colors } from '../../theme/Colors';
 
 const Component = () => {
     const [workers, setWorker] = useState<[WorkerInterface] | null>(null,);
@@ -23,8 +24,8 @@ const Component = () => {
 
     return (
         //Container
-        <ScrollView style={{backgroundColor: '#f2f2f2'}}> 
-            <StatusBar backgroundColor='#f2f2f2' barStyle="dark-content"/>
+        <ScrollView style={{backgroundColor: colors.gray_f2f}}> 
+            <StatusBar backgroundColor={colors.gray_f2f} barStyle="dark-content"/>
             {renderWorker}
         </ScrollView>
         

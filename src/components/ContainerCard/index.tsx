@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import { ContainersInterface } from '../../interfaces/interfaces';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colors } from '../../theme/Colors';
 
 
 interface Props {
@@ -30,7 +31,7 @@ const Component = (props: Props) => {
                             <View style={styles.IconText}>
                                 <Ionicons 
                                     name='navigate'
-                                    color='#d90429'
+                                    color={colors.red}
                                     size={30}
                                 />
                                 <Text style={styles.NickName}>{origin}</Text>
@@ -38,14 +39,14 @@ const Component = (props: Props) => {
 
                             <Ionicons 
                                 name='arrow-forward-outline'
-                                color='#000'
+                                color={colors.black}
                                 size={25}
                             />
 
                             <View style={styles.IconText}>
                                 <Ionicons 
                                     name='navigate'
-                                    color='#008000'
+                                    color={colors.green}
                                     size={25}
                                 />
                                 <Text style={styles.NickName}>{destiny}</Text>
@@ -56,7 +57,7 @@ const Component = (props: Props) => {
                             <View style={styles.IconText}>
                                 <Ionicons 
                                     name='thermometer-outline'
-                                    color='#0466C8'
+                                    color={colors.primary}
                                     size={25}
                                 />
                                 <Text style={styles.NickName}>{temp}</Text>
@@ -75,10 +76,10 @@ const styles = StyleSheet.create({
         marginTop: 20,
         height: 275,
         borderRadius: 10,
-        backgroundColor: '#f8f9fa',
+        backgroundColor: colors.white,
         display: 'flex',
 
-        shadowColor: "#000",
+        shadowColor: colors.black,
         shadowOffset: {
             width: 0,
             height: 9,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         elevation: 19,
     },
     LineTop: {
-        backgroundColor: '#0466C8',
+        backgroundColor: colors.primary,
         height: '30%',
         width: '100%',
         borderTopStartRadius: 10,
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     TackingNumber: {
-        color: '#fff',
+        color: colors.white,
         fontWeight: 'bold',
         letterSpacing: 2,
         fontSize: 18,
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     NickName: {
-        color: '#000',
+        color: colors.black,
         marginLeft: 10,
         fontSize: 16,
         fontWeight: 'bold',
